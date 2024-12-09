@@ -16,7 +16,7 @@ const NoteState = (props) => {
         }, 1000);
     }
     return (
-        <NoteContext.Provider value={{ state, update }}>
+        <NoteContext.Provider value={{}}>
             {props.children}
         </NoteContext.Provider>
     )
