@@ -2,21 +2,67 @@ import React, { useState } from 'react'
 import NoteContext from './NoteContext'
 
 const NoteState = (props) => {
-    const s1 = {
-        "name": "Harry",
-        "class": "5b"
-    }
-    const [state, setState] = useState(s1);
-    const update = () => {
-        setTimeout(() => {
-            setState({
-                "name": "Larry",
-                "class": "5b"
-            })
-        }, 1000);
-    }
+    const notesInitial =
+        [
+            {
+                "_id": "6756eb4051603efa9d547a35",
+                "user": "6756dd6d9dca2ac149b1f881",
+                "title": "myTitle",
+                "description": "myDescription",
+                "tag": "personal",
+                "date": "2024-12-09T13:06:08.263Z",
+                "__v": 0
+            },
+            {
+                "_id": "6756eb4151603efa9d547a37",
+                "user": "6756dd6d9dca2ac149b1f881",
+                "title": "myTitle",
+                "description": "myDescription",
+                "tag": "personal",
+                "date": "2024-12-09T13:06:09.016Z",
+                "__v": 0
+            },
+            {
+                "_id": "6756eb4151603efa9d547a39",
+                "user": "6756dd6d9dca2ac149b1f881",
+                "title": "myTitle",
+                "description": "myDescription",
+                "tag": "personal",
+                "date": "2024-12-09T13:06:09.199Z",
+                "__v": 0
+            },
+            {
+                "_id": "6756eb4151603efa9d547a3b",
+                "user": "6756dd6d9dca2ac149b1f881",
+                "title": "myTitle",
+                "description": "myDescription",
+                "tag": "personal",
+                "date": "2024-12-09T13:06:09.382Z",
+                "__v": 0
+            },
+            {
+                "_id": "6756eb4151603efa9d547a3d",
+                "user": "6756dd6d9dca2ac149b1f881",
+                "title": "myTitle",
+                "description": "myDescription",
+                "tag": "personal",
+                "date": "2024-12-09T13:06:09.687Z",
+                "__v": 0
+            },
+            {
+                "_id": "6756eb4151603efa9d547a3f",
+                "user": "6756dd6d9dca2ac149b1f881",
+                "title": "myTitle",
+                "description": "myDescription",
+                "tag": "personal",
+                "date": "2024-12-09T13:06:09.855Z",
+                "__v": 0
+            }
+        ]
+
+    const [notes, setNotes] = useState(notesInitial);
     return (
-        <NoteContext.Provider value={{}}>
+        <NoteContext.Provider value={{ notes, setNotes }}>
             {props.children}
         </NoteContext.Provider>
     )
