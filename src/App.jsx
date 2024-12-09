@@ -5,6 +5,7 @@ import Navbar from './component/Navbar'
 import Home from './component/Home'
 import About from './component/About'
 import NoteState from './context/notes/NoteState'
+import Alert from './component/Alert'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,6 +14,7 @@ function App() {
     <>
       <NoteState>
         <Navbar />
+        <Alert message="Alert" />
         <div className="container">
           <Routes>
             <Route exact path='/' element={<Home />}></Route>
