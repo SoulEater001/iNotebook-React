@@ -9,7 +9,6 @@ const NoteState = (props) => {
 
     //FetchAll Notes
     const getNotes = async () => {
-        console.log("Fetching notes")
         // api call
         const response = await fetch(`${host}/api/notes/fetchAllNotes`, {
             method: 'GET',
@@ -19,13 +18,11 @@ const NoteState = (props) => {
             },
         });
         const json = await response.json();
-        console.log(json)
         setNotes(json);
     }
 
     //Add a note
     const addNote = async (title, description, tag) => {
-        console.log("Adding a note")
         // api call
         const response = await fetch(`${host}/api/notes/addNote`, {
             method: 'POST',
@@ -40,7 +37,6 @@ const NoteState = (props) => {
     }
     //Delete a note
     const deleteNote = async (id) => {
-        console.log("Deleting with id" + id);
         // api call
         const response = await fetch(`${host}/api/notes/deleteNote/${id}`, {
             method: 'DELETE',
@@ -50,7 +46,6 @@ const NoteState = (props) => {
             },
         });
         const json = response.json();
-        console.log(json);
 
         const newNotes = notes.filter((note) => {
             return note._id !== id;
@@ -70,7 +65,7 @@ const NoteState = (props) => {
             body: JSON.stringify({ title, description, tag })
         });
         const json = await response.json();
-        console.log(json);
+
         let newNotes = JSON.parse(JSON.stringify(notes));
         //logic to edit in client
         for (let index = 0; index < newNotes.length; index++) {
@@ -82,7 +77,6 @@ const NoteState = (props) => {
                 break;
             }
         }
-        console.log(newNotes)
         setNotes(newNotes);
     }
 
