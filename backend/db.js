@@ -1,9 +1,7 @@
-const mongoose = require('mongoose');
-
-const mongoURI = "mongodb://localhost:27017/iNotebook?directConnection=true";
+import mongoose from 'mongoose'
 
 const connectToMongo = async () => {
-    await mongoose.connect(mongoURI)
+    await mongoose.connect(process.env.mongoURI)
         .then(() => {
             console.log("Connected to MongoDB");
         })
@@ -12,4 +10,5 @@ const connectToMongo = async () => {
         });
 };
 
-module.exports = connectToMongo;
+export default connectToMongo;
+
