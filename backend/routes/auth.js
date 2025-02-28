@@ -41,7 +41,7 @@ router.post(
                 }
             }
             const authToken = jwt.sign(data, process.env.JWT_Secret);
-            success = false;
+            success = true;
             res.json({ success,authToken });
         } catch (error) {
             console.log(error.message);
