@@ -1,7 +1,6 @@
 import mongoose from 'mongoose'
 import 'dotenv/config'
 
-// const mongoURI = "mongodb://127.0.0.1:27017/iNotebook?directConnection=true"; 
 const mongoURI = process.env.MONGO_URI; 
 const connectToMongo = async () => {
     await mongoose.connect(mongoURI)

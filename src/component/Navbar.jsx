@@ -34,7 +34,7 @@ const Navbar = () => {
                             {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" /> */}
                             <Link className="btn btn-primary mx-1" to="/login" role="button">Login</Link>
                             <Link className="btn btn-primary mx-1" to="/signup" role="button">Signup</Link>
-                        </form>:<button className="btn btn-primary" onClick={handleLogout}>Logoout</button>}
+                        </form>:<button className="btn btn-primary" onClick={handleLogout}>Log out</button>}
                         
                     </div>
                 </div>
