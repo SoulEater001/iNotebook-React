@@ -29,10 +29,10 @@ const About = () => {
                     </p>
 
                     <div className="text-center">
-                        <a href="https://github.com/" target="_blank" rel="noreferrer" className="btn btn-dark mx-2">
+                        <a href="https://github.com/SoulEater001/iNotebook-React" target="_blank" rel="noreferrer" className="btn btn-dark mx-2">
                             <i className="bi bi-github me-2"></i> GitHub
                         </a>
-                        <a href="https://enhancedesign.co.in/" target="_blank" rel="noreferrer" className="btn btn-primary mx-2">
+                        <a target="_blank" rel="noreferrer" className="btn btn-primary mx-2">
                             🌐 Portfolio
                         </a>
                     </div>

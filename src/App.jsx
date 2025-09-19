@@ -8,15 +8,13 @@ import NoteState from './context/notes/NoteState'
 import Alert from './component/Alert'
 import Login from './component/Login'
 import Signup from './component/Signup'
+import NotesPage from './component/NotesPage'   // ✅ Import NotesPage
 
 function App() {
-  const [count, setCount] = useState(0)
   const [alert, setAlert] = useState(null)
 
   const showAlert = (message, type) =>{
-    setAlert({
-      msg : message, type:type
-    })
+    setAlert({ msg : message, type:type })
     setTimeout(() => {
       setAlert(null)
     }, 1500);
@@ -33,6 +31,7 @@ function App() {
             <Route exact path='/about' element={<About />}></Route>
             <Route exact path='/login' element={<Login showAlert={showAlert}/>}></Route>
             <Route exact path='/signup' element={<Signup showAlert={showAlert}/>}></Route>
+            <Route exact path='/notes' element={<NotesPage showAlert={showAlert}/>}></Route> {/* ✅ New route */}
           </Routes>
         </div>
       </NoteState>
