@@ -1,3 +1,252 @@
 i {
     cursor: pointer
 }
+
+body {
+  background: linear-gradient(to bottom right, #f8faff, #eef2ff);
+  min-height: 100vh;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.75); /* semi-transparent */
+  backdrop-filter: blur(12px);           /* glass blur */
+  -webkit-backdrop-filter: blur(12px);   /* safari fix */
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12); /* premium shadow */
+  padding: 25px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* optional hover effect */
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+}
+
+.form-control:focus, 
+.form-select:focus, 
+textarea:focus {
+  border-color: #0d6efd !important;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+}
+
+/* --------------- Note Card --------------- */
+.note-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 18px;
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.note-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* --------------- Header --------------- */
+.note-card-header {
+  margin-bottom: 10px;
+}
+
+.note-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1e293b; /* slate-800 */
+}
+
+/* --------------- Body --------------- */
+.note-description {
+  font-size: 0.95rem;
+  color: #475569; /* slate-600 */
+  margin-bottom: 0;
+  white-space: pre-wrap;
+}
+
+/* --------------- Tag --------------- */
+.note-tag {
+  background: #0d6efd;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* --------------- Icons --------------- */
+.edit-icon,
+.delete-icon {
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.edit-icon {
+  color: #0d6efd;
+}
+
+.edit-icon:hover {
+  color: #0b5ed7;
+  transform: scale(1.15);
+}
+
+.delete-icon {
+  color: #ef4444;
+}
+
+.delete-icon:hover {
+  color: #dc2626;
+  transform: scale(1.15);
+}
+
+.note-card-footer {
+  margin-top: 12px;
+}
+
+.edit-modal-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  overflow: hidden;
+  animation: modalFade 0.4s ease;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth fade animation */
+@keyframes modalFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Modal Header */
+.edit-modal-header {
+  background: linear-gradient(135deg, #0d6efd, #2563eb);
+  color: white;
+  border-bottom: none;
+  padding: 15px 20px;
+}
+
+/* Inputs */
+.enhanced-input {
+  border-radius: 10px;
+  padding: 10px 12px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.enhanced-input:focus {
+  border-color: #0d6efd !important;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+}
+
+/* Footer Buttons */
+.modal-footer .btn {
+  font-weight: 500;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.modal-footer .btn-light {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+}
+
+.modal-footer .btn-light:hover {
+  background: #e2e8f0;
+}
+
+/* ----------------- About Card Style ----------------- */
+.about-card {
+  max-width: 750px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 35px;
+  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255,255,255,0.6);
+  animation: fadeSlideIn 0.5s ease;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Titles */
+.about-title {
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.section-title {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* Text */
+.about-text {
+  color: #475569;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Feature List */
+.feature-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.feature-list li {
+  background: rgba(13, 110, 253, 0.08);
+  border-left: 4px solid #0d6efd;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 0.97rem;
+  color: #334155;
+  transition: transform 0.2s ease;
+}
+
+.feature-list li:hover {
+  transform: translateX(4px);
+}
+
+/* Buttons */
+.about-btn-dark {
+  background: #0f172a;
+  border-radius: 10px;
+  padding: 10px 20px;
+  transition: 0.25s;
+  color: white;
+}
+
+.about-btn-dark:hover {
+  background: #1e293b;
+}
+
+.about-btn-primary {
+  background: #0d6efd;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: white;
+  transition: 0.25s;
+}
+
+.about-btn-primary:hover {
+  background: #0b5ed7;
+}

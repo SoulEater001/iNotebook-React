@@ -18,8 +18,8 @@ const AddNote = (props) => {
     };
 
     return (
-        <div className="container my-4">
-            <div className="card shadow-sm border-0 rounded-3">
+        <div className="col-md-6 col-lg-5 mx-auto my-5">
+            <div className="card glass-card rounded-3">
                 <div className="card-body">
                     <h4 className="card-title mb-3">➕ Add a New Note</h4>
                     <form onSubmit={handleClick}>

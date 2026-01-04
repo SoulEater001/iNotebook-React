@@ -6,20 +6,22 @@ const NoteItem = (props) => {
   const { deleteNote } = useContext(NoteContext);
 
   return (
-    <div className="col-md-4 col-lg-3 my-3">
-      <div className="card shadow-sm border rounded h-100">
-        {/* Card Header */}
-        <div className="card-header d-flex justify-content-between align-items-center">
-          <h6 className="mb-0 text-truncate">{note.title}</h6>
-          <div>
+    <div className="col-md-6 col-lg-4 col-xl-3 my-3">
+      <div className="note-card shadow-sm rounded-4">
+        
+        {/* Header */}
+        <div className="note-card-header d-flex justify-content-between align-items-start">
+          <h5 className="note-title text-truncate">{note.title}</h5>
+
+          <div className="note-actions d-flex">
             <i
-              className="fa-solid fa-pen-to-square text-primary me-2"
+              className="fa-solid fa-pen-to-square edit-icon"
               role="button"
               title="Edit Note"
               onClick={() => updateNote(note)}
             ></i>
             <i
-              className="fa-solid fa-trash text-danger"
+              className="fa-solid fa-trash delete-icon ms-3"
               role="button"
               title="Delete Note"
               onClick={() => {
@@ -30,15 +32,16 @@ const NoteItem = (props) => {
           </div>
         </div>
 
-        {/* Card Body */}
-        <div className="card-body">
-          <p className="card-text text-muted">{note.description}</p>
+        {/* Body */}
+        <div className="note-card-body">
+          <p className="note-description">{note.description}</p>
         </div>
 
-        {/* Card Footer */}
-        <div className="card-footer text-muted small">
-          <span className="badge bg-secondary">{note.tag || 'General'}</span>
+        {/* Footer */}
+        <div className="note-card-footer">
+          <span className="note-tag">{note.tag || "General"}</span>
         </div>
+
       </div>
     </div>
   );
